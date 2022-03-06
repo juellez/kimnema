@@ -1,0 +1,151 @@
+/*  ================================================
+	Author: Codeberry
+	Name: Badge
+	Version: 1.0
+	================================================ */
+
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,600");
+
+/* Contents */
+html.iframe body .cb-badge {
+	display: none !important;
+}
+
+body .cb-badge {
+	color: #ffffff !important;
+	font-family: "Nunito Sans", "Helvetica Neue", sans-serif !important;
+	letter-spacing: 0 !important;
+	text-align: left !important;
+	background: #111111 !important;
+	padding: 12px 20px 12px 12px;
+	line-height: 1.5 !important;
+	bottom: 12px !important;
+	right: 12px !important;
+	position: fixed !important;
+	z-index: 20000;
+	display: -webkit-box !important;
+	display: -webkit-flex !important;
+	display: -ms-flexbox !important;
+	display: flex !important;
+	-webkit-transition: box-shadow .3s cubic-bezier(.33, 0, .2, 1), background-color .3s cubic-bezier(.33, 0, .2, 1), -webkit-transform .3s cubic-bezier(.33, 0, .2, 1);
+			transition: box-shadow .3s cubic-bezier(.33, 0,. 2, 1), background-color .3s cubic-bezier(.33, 0, .2, 1), -webkit-transform .3s cubic-bezier(.33, 0, .2, 1);
+			transition: box-shadow .3s cubic-bezier(.33, 0, .2, 1), background-color .3s cubic-bezier(.33, 0, .2, 1), transform .3s cubic-bezier(.33, 0, .2, 1);
+			transition: box-shadow .3s cubic-bezier(.33, 0, .2, 1), background-color .3s cubic-bezier(.33, 0, .2, 1), transform .3s cubic-bezier(.33, 0,. 2, 1), -webkit-transform .3s cubic-bezier(.33, 0, .2, 1);
+}
+
+@media screen and (max-width: 520px) {
+	body .cb-badge {
+		padding: 12px 20px 12px 20px;
+		left: 3% !important;
+		right: 3% !important;
+	}
+}
+
+body .cb-badge:hover {
+	background: #000000 !important;
+	cursor: pointer !important;
+	-webkit-transform: scale(.96);
+		-ms-transform: scale(.96);
+			transform: scale(.96);
+}
+
+body .cb-badge-icon {
+	opacity: .9;
+	-webkit-box-flex: 0 !important;
+	-webkit-flex: 0 0 auto !important;
+		-ms-flex: 0 0 auto !important;
+			flex: 0 0 auto !important;
+}
+
+body .cb-badge-icon svg {
+	fill: #ffffff !important;
+	display: block !important;
+	top: 1px !important;
+	height: 38px !important;
+	width: 38px !important;
+	position: relative !important;
+}
+
+body .cb-badge-content {
+	padding-left: 10px !important;
+	overflow: hidden !important;
+	-webkit-box-flex: 1 !important;
+	-webkit-flex: 1 1 auto !important;
+		-ms-flex: 1 1 auto !important;
+			flex: 1 1 auto !important;
+}
+
+@media screen and (max-width: 520px) {
+	body .cb-badge-content {
+		padding-left: 15px !important;
+	}
+}
+
+body .cb-badge-title {
+	font-size: 15px !important;
+	font-weight: 600 !important;
+}
+
+body .cb-badge-subtitle {
+	font-size: 12px !important;
+	font-weight: 400 !important;
+	opacity: .9 !important;
+}
+
+body .cb-badge-link {
+	border-bottom: none !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	cursor: pointer !important;
+	bottom: 0 !important;
+	z-index: 999999 !important;
+}
+
+body .cb-badge span {
+	-webkit-font-smoothing: antialiased !important;
+	display: block !important;
+}
+
+.shine {
+	-webkit-mask-image: -webkit-linear-gradient(165deg, rgba(0, 0, 0, .8) 30%, #000000 40%, rgba(0, 0, 0, .8) 60%);
+	-webkit-mask-size: 200%;
+	-webkit-animation: shine 4s infinite;
+			animation: shine 4s infinite;
+}
+
+@-webkit-keyframes shine {
+	from {
+		-webkit-mask-position: 150%;
+	}
+
+	to {
+		-webkit-mask-position: -50%;
+	}
+}
+
+@-webkit-keyframes hover {
+	from {
+		-webkit-transform: translateY(-50%);
+				transform: translateY(-50%);
+	}
+
+	to {
+		-webkit-transform: translateY(-75%);
+				transform: translateY(-75%);
+	}
+}
+
+@-webkit-keyframes hoverSmall {
+	from {
+		-webkit-transform: translateY(30%) rotate(45deg);
+				transform: translateY(30%) rotate(45deg);
+	}
+
+	to {
+		-webkit-transform: translateY(-10%) rotate(45deg);
+				transform: translateY(-10%) rotate(45deg);
+	}
+}
