@@ -15,20 +15,45 @@ html {
 }
 
 body {
-	background: url('../../assets/img/bkg-sunriseclouds.jpg') no-repeat;
+	animation-duration: 20s;
+	animation-name: swapbkg1;
+	/*animation-direction: alternate;*/
+	animation-iteration-count: infinite;
 
-	background-position: top left, top left;
-	background-repeat: no-repeat;
+	background: url('../../assets/img/bkg-sunriseclouds.jpg') no-repeat fixed left top;
 	background-size: cover;
-	background-attachment: fixed;
 
 	font: 15px/1.5 "Rubik", Inconsolata, sans-serif;
 	color: #ebebea;
-/*	background: #222222; */	
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+@keyframes swapbkg1 {
+
+  0% { 
+	background: #333 url('../../assets/img/bkg-sunriseclouds.jpg') no-repeat fixed left top;
+	background-size: cover;
+  }
+  25% { 
+	background: #333 url('../../assets/img/bkg-sunriseclouds.jpg') no-repeat fixed left top;
+	background-size: cover;
+  }
+  50% { 
+	background: #333 url('../../assets/img/bkg-mexicobeachsunrise.jpg') no-repeat fixed left top;
+	background-size: cover;
+  }
+  75% { 
+	background: #333 url('../../assets/img/bkg-mexicobeachsunrise.jpg') no-repeat fixed left top;
+	background-size: cover;
+  }
+  100% { 
+	background: #333 url('../../assets/img/bkg-sunriseclouds.jpg') no-repeat fixed left top;
+	background-size: cover;
+  }
+}
+
 
 dd, dl, h1, p {
 	margin: 0;
@@ -286,3 +311,131 @@ a:hover, a:focus {
 				animation: seven 1s .25s linear forwards;
 	}
 }
+
+
+
+
+
+
+/* Styles the thumbnail */
+
+a.lightbox { text-align: center; 
+	border-bottom: none;
+}
+a.lightbox img {
+height: 150px;
+border: 3px solid white;
+box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+margin: 20px 20px 20px 20px;
+}
+
+/* Styles the lightbox, removes it from sight and adds the fade-in transition */
+
+.lightbox-target {
+position: fixed;
+top: -100%;
+width: 100%;
+background: rgba(0,0,0,.7);
+width: 100%;
+opacity: 0;
+-webkit-transition: opacity .5s ease-in-out;
+-moz-transition: opacity .5s ease-in-out;
+-o-transition: opacity .5s ease-in-out;
+transition: opacity .5s ease-in-out;
+overflow: hidden;
+z-index: 10;
+ 
+}
+
+/* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
+
+.lightbox-target img {
+margin: auto;
+position: absolute;
+top: 0;
+left:0;
+right:0;
+bottom: 0;
+max-height: 0%;
+max-width: 0%;
+border: 3px solid white;
+box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+box-sizing: border-box;
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+  
+}
+
+/* Styles the close link, adds the slide down transition */
+
+a.lightbox-close {
+display: block;
+width:50px;
+height:50px;
+box-sizing: border-box;
+background: white;
+color: black;
+text-decoration: none;
+position: absolute;
+top: -80px;
+right: 0;
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+
+a.lightbox-close:before {
+content: "";
+display: block;
+height: 30px;
+width: 1px;
+background: black;
+position: absolute;
+left: 26px;
+top:10px;
+-webkit-transform:rotate(45deg);
+-moz-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+transform:rotate(45deg);
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+
+a.lightbox-close:after {
+content: "";
+display: block;
+height: 30px;
+width: 1px;
+background: black;
+position: absolute;
+left: 26px;
+top:10px;
+-webkit-transform:rotate(-45deg);
+-moz-transform:rotate(-45deg);
+-o-transform:rotate(-45deg);
+transform:rotate(-45deg);
+}
+
+/* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
+
+.lightbox-target:target {
+opacity: 1;
+top: 0;
+bottom: 0;
+  overflow:scroll;
+}
+
+.lightbox-target:target img {
+max-height: 100%;
+max-width: 100%;
+}
+
+.lightbox-target:target a.lightbox-close {
+top: 0;
+}
+
