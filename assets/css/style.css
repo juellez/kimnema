@@ -67,6 +67,13 @@ h1, h2 {
 	line-height: .8;
 }
 
+h2 {
+	font-size: 1.25em;
+  margin-top: 22px;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+}
+
 a {
 	color: inherit;
 	position: relative;
@@ -177,10 +184,17 @@ a:hover, a:focus {
 	}
 }
 
+.callout {
+  background-color: rgba(0,0,0,.5);
+  padding: 1px 0 12px 20px;
+  margin: 2em 0 2em 0;
+
+}
+
 .bio {
 	font-size: 20px;
 	font-weight: 100;
-	margin-bottom: -.45em;
+	margin-bottom: 0;
 	max-width: 700px;
 }
 
